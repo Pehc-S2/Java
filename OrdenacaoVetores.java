@@ -1,4 +1,6 @@
+import java.util.TreeSet;
 public class OrdenacaoVetores {
+
     public static void main(String[] args) {
         int[] numeros = { 6, 4, 3, 2, 8, 10, 1, 7};
         // Declarado um vetor com 8 posições.
@@ -44,6 +46,24 @@ public class OrdenacaoVetores {
         System.out.println("Vetor de forma organizada: ");
         for (i = 0; i < 8; i++) {
             System.out.println(" " + numeros[i]);
+        }
+        // Organização usando o TreeSet.
+        // com o TreeSet basta adicionar os numeros e ele já os ordena automaticamente.
+        TreeSet<Integer> numeroTree = new TreeSet<>();
+            numeroTree.add(6);
+            numeroTree.add(4);
+            numeroTree.add(3);
+            numeroTree.add(2);
+            numeroTree.add(8);
+            numeroTree.add(10);
+            numeroTree.add(1);
+            numeroTree.add(7);
+
+        System.out.println(" ");
+        System.out.println("Numeros ordenados automaticamente (TreeSet):");
+        // foreach sendo usado para percorrer o TreeSet e devolver os valores em formato de lista.
+        for(int numero : numeroTree) {
+            System.out.println(" " + numero);
         }
     }
 }
