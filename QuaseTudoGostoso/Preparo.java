@@ -1,5 +1,4 @@
 package QuaseTudoGostoso;
-
 public class Preparo {
     int idPreparo;
     String modoPreparo;

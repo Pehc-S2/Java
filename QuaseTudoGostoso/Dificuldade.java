@@ -1,5 +1,4 @@
 package QuaseTudoGostoso;
-
 public class Dificuldade {
     int idDificuldade;
     String dificuldade;

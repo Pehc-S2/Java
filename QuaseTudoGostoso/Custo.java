@@ -1,5 +1,4 @@
 package QuaseTudoGostoso;
-
 public class Custo {
     int idCusto;
     String custo;
