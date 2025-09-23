@@ -1,41 +1,79 @@
 package QuaseTudoGostoso;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class QuaseTudoGostoso {
     public static void main(String[] args) {
-        SortedSet<Receita> receitas = new TreeSet<>();
-        Custo custo1 = new Custo(1, "55,25");
-        Dificuldade dif1 = new Dificuldade(1, "Quase Impossivel");
-        Preparo prep1 = new Preparo(1, "...", "UrldoVideo", "1h34min");
-        Usuario user1 = new Usuario(1, "João Kléber", "JK.gmail.com", 
-        "02/08/1957", 0, "Masculino", "123", "03/08/1957");    
-        Receita receita1 = new Receita(1, "Ovo Frito", "Ótima receita para toda hora", 
-        "ovoFrito.jpg", custo1, prep1, dif1, user1);
-
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Digite o Titulo da Receita: ");
-        String titulo = scanner.nextLine();
-        System.out.println("Digite uma descrição para esta Receita: ");
-        String descricao = scanner.nextLine();
-        System.out.println("Digite o nome do arquivo da foto: ");
-        String imagem = scanner.nextLine();
+        SortedSet<Usuario> usuarios = new TreeSet<>();
+        try {
+            int escolha = 0;
+            int entrada = 0;
+            do {
+                System.out.println("Bem vindo ao Quase tudo gostoso o que quer fazer?");
+                System.out.println(
+                        "Adicionar usuário (1) - Listar usuário (2) - Adicionar receita (3) - Listar receita (4)");
+                entrada = scanner.nextInt();
+                escolha = entrada;
+                switch (entrada) {
+                    case 1:
+                        System.out.print("Digite o Id do Usuário: ");
+                        Double idUsuario = scanner.nextDouble();
+                        System.out.print("Digite o Nome do Usuário: ");
+                        String nome = scanner.nextLine();
+                        System.out.println("Digite o Email do Usuário: ");
+                        String email = scanner.nextLine();
+                        System.out.print("Digite a Senha do Usuário: ");
+                        String senha = scanner.nextLine();
+                        System.out.println("Digite a Data de Nascimento do Usuário: ");
+                        String dtNascimento = scanner.nextLine();
+                        System.out.print("Digite a Data de Inscrição do Usuário: ");
+                        String dtInscricao = scanner.nextLine();
+                        System.out.print("Digite o Cep do Usuário: ");
+                        Double cep = scanner.nextDouble();
+                        System.out.print("Digite o Genero do Usuário: ");
+                        String genero = scanner.nextLine();
 
-        Receita receita2 = new Receita(2, titulo, descricao, imagem, custo1, prep1, dif1, user1);
+                        Usuario a = new Usuario(idUsuario, nome, email, dtNascimento, cep, genero, senha, dtInscricao);
+                        usuarios.add(a);
+                        break;
 
-        for (Receita receita : user1.receitas){
-            System.out.println("");
-            System.out.println("Informações da Receita");
-            System.out.println("Titulo: " + receita.titulo);
-            System.out.println("Descrição: " + receita.descricao);
-            System.out.println("Imagem: " + receita.imagem);
-            System.out.println("Custo: " + custo1.custo);
-            System.out.println("Modo de Preparação: " + prep1.modoPreparo);
-            System.out.println("Tempo de Preparação: " + prep1.tempoPreparo);
-            System.out.println("Dificuldade: " + dif1.dificuldade);
-            System.out.println("Autor da Receita: " + user1.nome);
+                    case 2:
+                    for (Usuario usuario : usuarios){
+                        System.out.println("Informações do Usuário");
+                        System.out.println("ID: " + usuario.idUsuario);
+                        System.out.println("Nome: " + usuario.nome);
+                        System.out.println("Email: " + usuario.email);
+                        System.out.println("Senha: " + usuario.senha);
+                        System.out.println("Data de Nascimento: " + usuario.dtNascimento);
+                        System.out.println("Data de Inscrição: " + usuario.dtInscricao);
+                        System.out.println("Cep: " + usuario.cep);
+                        System.out.println("Genero: " + usuario.genero);
+                    }
+                        break;
+
+                    case 3:
+
+                        break;
+
+                    case 4:
+
+                        break;
+
+                    default:
+                        entrada = 0;
+                        System.out.println("Digite uma opção válida!");
+                        break;
+                }
+            } while (entrada == 0);
+        } catch (Exception e) {
+            System.out.println("Erro " + e.getMessage());
+        } finally {
+            scanner.close();
         }
-        scanner.close();
+
     }
 }

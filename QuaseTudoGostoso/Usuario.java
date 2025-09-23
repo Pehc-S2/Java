@@ -2,19 +2,19 @@ package QuaseTudoGostoso;
 import java.util.ArrayList;
 
 public class Usuario {
-    int idUsuario;
+    Double idUsuario;
     String nome;
     String email;
     String dtNascimento;
-    int cep;
+    Double cep;
     String genero;
     String senha;
     String dtInscricao;
 
     ArrayList<Receita> receitas = new ArrayList<>();
 
-    public Usuario(int idUsuario, String nome,  String email, String dtNascimento, 
-    int cep, String genero, String senha, String dtInscricao){
+    public Usuario(Double idUsuario, String nome,  String email, String dtNascimento, 
+    Double cep, String genero, String senha, String dtInscricao){
         this.idUsuario = idUsuario;
         this.nome = nome;
         this.email = email;
