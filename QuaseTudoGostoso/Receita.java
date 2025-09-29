@@ -1,6 +1,6 @@
 package QuaseTudoGostoso;
 public class Receita {
-    int idReceita;
+    Double idReceita;
     String titulo;
     String descricao;
     String imagem;
@@ -10,7 +10,7 @@ public class Receita {
     Usuario usuario;
 
 
-    public Receita(int idReceita, String titulo, String descricao, String imagem, 
+    public Receita(Double idReceita, String titulo, String descricao, String imagem, 
     Custo custo, Preparo preparo, Dificuldade dificuldade, Usuario usuario){
         this.idReceita = idReceita;
         this.titulo = titulo;
@@ -20,15 +20,5 @@ public class Receita {
         this.preparo = preparo;
         this.dificuldade = dificuldade;
         this.usuario = usuario;
-
-        usuario.receitas.add(this);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Receita receita = (Receita) obj;
-        return titulo.equals(receita.titulo);
     }
 }

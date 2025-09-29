@@ -1,9 +1,9 @@
 package QuaseTudoGostoso;
 public class Custo {
-    int idCusto;
+    Double idCusto;
     String custo;
 
-    public Custo(int idCusto, String custo){
+    public Custo(Double idCusto, String custo){
         this.idCusto = idCusto;
         this.custo = custo;
     }

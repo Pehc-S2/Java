@@ -2,26 +2,29 @@ package QuaseTudoGostoso;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.SortedSet;
-import java.util.TreeSet;
+
 
 public class QuaseTudoGostoso {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        SortedSet<Usuario> usuarios = new TreeSet<>();
+
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+        ArrayList<Receita> receitas = new ArrayList<>();
+
         try {
             int escolha = 0;
             int entrada = 0;
             do {
                 System.out.println("Bem vindo ao Quase tudo gostoso o que quer fazer?");
                 System.out.println(
-                        "Adicionar usuário (1) - Listar usuário (2) - Adicionar receita (3) - Listar receita (4)");
+                        "Adicionar usuário (1) - Listar usuário (2) - Adicionar receita (3) - Listar receita (4) - Fechar Programa (5)");
                 entrada = scanner.nextInt();
                 escolha = entrada;
-                switch (entrada) {
+                switch (escolha) {
                     case 1:
                         System.out.print("Digite o Id do Usuário: ");
                         Double idUsuario = scanner.nextDouble();
+                        scanner.nextLine();
                         System.out.print("Digite o Nome do Usuário: ");
                         String nome = scanner.nextLine();
                         System.out.println("Digite o Email do Usuário: ");
@@ -34,8 +37,10 @@ public class QuaseTudoGostoso {
                         String dtInscricao = scanner.nextLine();
                         System.out.print("Digite o Cep do Usuário: ");
                         Double cep = scanner.nextDouble();
+                        scanner.nextLine();
                         System.out.print("Digite o Genero do Usuário: ");
                         String genero = scanner.nextLine();
+                        System.out.println(" ");
 
                         Usuario a = new Usuario(idUsuario, nome, email, dtNascimento, cep, genero, senha, dtInscricao);
                         usuarios.add(a);
@@ -52,6 +57,7 @@ public class QuaseTudoGostoso {
                         System.out.println("Data de Inscrição: " + usuario.dtInscricao);
                         System.out.println("Cep: " + usuario.cep);
                         System.out.println("Genero: " + usuario.genero);
+                        System.out.println(" ");
                     }
                         break;
 
@@ -63,12 +69,15 @@ public class QuaseTudoGostoso {
 
                         break;
 
+                    case 5:
+                        System.out.println("Obrigado por usar meu programa, até mais!");
+                        break;
+
                     default:
-                        entrada = 0;
                         System.out.println("Digite uma opção válida!");
                         break;
                 }
-            } while (entrada == 0);
+            } while (entrada != 5);
         } catch (Exception e) {
             System.out.println("Erro " + e.getMessage());
         } finally {

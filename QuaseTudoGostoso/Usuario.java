@@ -1,5 +1,4 @@
 package QuaseTudoGostoso;
-import java.util.ArrayList;
 
 public class Usuario {
     Double idUsuario;
@@ -10,8 +9,6 @@ public class Usuario {
     String genero;
     String senha;
     String dtInscricao;
-
-    ArrayList<Receita> receitas = new ArrayList<>();
 
     public Usuario(Double idUsuario, String nome,  String email, String dtNascimento, 
     Double cep, String genero, String senha, String dtInscricao){
