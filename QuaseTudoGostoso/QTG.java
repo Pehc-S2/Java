@@ -1,3 +1,5 @@
+// ------------------------ Lugar de teste ------------------------
+
 /*
 package QuaseTudoGostoso;
 import java.util.Scanner;
@@ -41,3 +43,9 @@ public class QTG {
     }
 }
 */
+
+
+/* 
+    System.out.println("Adicionar Custo (5) - Listar Custo (6) - Adicionar Dificuldade (7) - Listar Dificuldade (8)");
+    System.out.println("Adicionar Preparo (9) - Listar Preparo (10) - Fechar Programa (11)");
+ */

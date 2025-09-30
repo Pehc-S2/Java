@@ -16,10 +16,12 @@ public class QuaseTudoGostoso {
             int entrada = 0;
             do {
                 System.out.println("Bem vindo ao Quase tudo gostoso o que quer fazer?");
-                System.out.println(
-                        "Adicionar usuário (1) - Listar usuário (2) - Adicionar receita (3) - Listar receita (4) - Fechar Programa (5)");
+                System.out.println("Adicionar Usuário (1) - Listar Usuário (2) - Adicionar Receita (3) - Listar Receita (4) - Fechar Programa (10)");
+                System.out.println(" ");
+
                 entrada = scanner.nextInt();
                 escolha = entrada;
+
                 switch (escolha) {
                     case 1:
                         System.out.print("Digite o Id do Usuário: ");
@@ -62,22 +64,42 @@ public class QuaseTudoGostoso {
                         break;
 
                     case 3:
+                        System.out.println("Digite o Id da Receita: ");
+                        Double idReceita = scanner.nextDouble();
+                        scanner.nextLine();
+                        System.out.println("Digite o Titulo da Receita: ");
+                        String titulo = scanner.nextLine();
+                        System.out.println("Digite a Descrição da Receita: ");
+                        String descricao = scanner.nextLine();
+                        System.out.println("Aponte a Imagem da Receita: ");
+                        String imagem = scanner.nextLine();
+                        System.out.println(" ");
 
+                        Receita b = new Receita(idReceita, titulo, descricao, imagem, null, null, null, null);
+                        receitas.add(b);
                         break;
 
                     case 4:
-
+                    for (Receita receita : receitas){
+                        System.out.println("Informações da Receita");
+                        System.out.println("ID: " + receita.idReceita);
+                        System.out.println("Titulo: " + receita.titulo);
+                        System.out.println("Descrição: " + receita.descricao);
+                        System.out.println("Imagem: " + receita.imagem);
+                        System.out.println(" ");
+                    }
                         break;
 
-                    case 5:
+                    case 10:
                         System.out.println("Obrigado por usar meu programa, até mais!");
+                        System.out.println(" ");
                         break;
 
                     default:
                         System.out.println("Digite uma opção válida!");
                         break;
                 }
-            } while (entrada != 5);
+            } while (entrada != 10);
         } catch (Exception e) {
             System.out.println("Erro " + e.getMessage());
         } finally {
