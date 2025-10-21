@@ -52,7 +52,7 @@ public class QuaseTudoGostoso {
                     for (Usuario usuario : usuarios){
                         System.out.println("Informações do Usuário");
                         System.out.println("ID: " + usuario.idUsuario);
-                        System.out.println("Nome: " + usuario.nome);
+                        System.out.println("Nome: " + usuario.setnome);
                         System.out.println("Email: " + usuario.email);
                         System.out.println("Senha: " + usuario.senha);
                         System.out.println("Data de Nascimento: " + usuario.dtNascimento);
